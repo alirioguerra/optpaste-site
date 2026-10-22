@@ -1,10 +1,11 @@
+import { useEffect } from 'react'
 import { Icon, type IconName } from './Icon'
 import { PanelDemo } from './PanelDemo'
+import { CHECKOUT_HASH, openCheckout } from './paddle'
 import { useLatestRelease } from './useLatestRelease'
 
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
 const DOWNLOAD_URL = '/downloads/OptPaste.dmg'
-const CHECKOUT_URL = 'https://optpaste.lemonsqueezy.com/buy'
 
 const features: { icon: IconName; title: string; text: string }[] = [
   {
@@ -53,6 +54,16 @@ export default function App() {
   const release = useLatestRelease()
   const downloadURL = release?.url ?? DOWNLOAD_URL
 
+  // The app's "Comprar licença…" links here.
+  useEffect(() => {
+    if (window.location.hash === CHECKOUT_HASH) openCheckout()
+  }, [])
+
+  const buy = (event: React.MouseEvent) => {
+    event.preventDefault()
+    openCheckout()
+  }
+
   return (
     <>
       <div className="backdrop" aria-hidden="true" />
@@ -93,7 +104,7 @@ export default function App() {
               <a className="button" href={downloadURL}>
                 <Icon name="apple" /> Baixar para Mac
               </a>
-              <a className="button ghost" href={CHECKOUT_URL}>
+              <a className="button ghost" href={CHECKOUT_HASH} onClick={buy}>
                 <Icon name="key" /> Comprar licença
               </a>
             </div>
@@ -165,7 +176,7 @@ export default function App() {
             <a className="button" href={downloadURL}>
               <Icon name="download" /> Baixar o OptPaste
             </a>
-            <a className="button ghost" href={CHECKOUT_URL}>
+            <a className="button ghost" href={CHECKOUT_HASH} onClick={buy}>
               <Icon name="key" /> Comprar licença
             </a>
           </div>
