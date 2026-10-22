@@ -126,9 +126,9 @@ export default function App() {
               O <kbd aria-label="Windows"><Icon name="windows" /></kbd> + <kbd>V</kbd> do Windows, agora no Mac.
             </h2>
             <p className="section-lead">
-              No Windows, o histórico da área de transferência vem de fábrica: tecla do Windows + V e os últimos itens
-              copiados aparecem na tela. O macOS não tem nada parecido. O OptPaste traz o mesmo recurso para o Mac,
-              com <kbd>⌥</kbd>
+              No Windows, a tecla do Windows + V abre uma janela com os últimos itens copiados, e um clique cola o que
+              você escolher. O Mac também guarda um histórico, mas falta esse atalho direto e uma janela feita só para
+              isso. O OptPaste traz essa experiência para o Mac, com <kbd>⌥</kbd>
               <kbd>V</kbd> no lugar de <kbd aria-label="Windows"><Icon name="windows" /></kbd> + <kbd>V</kbd>.
             </p>
             <ul className="checks">
