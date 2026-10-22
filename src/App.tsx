@@ -96,7 +96,7 @@ export default function App() {
                 <Icon name="github" /> Ver no GitHub
               </a>
             </div>
-            <p className="fine">Requer macOS 27 ou mais recente</p>
+            <p className="fine">Requer macOS 14 Sonoma ou mais recente</p>
           </div>
 
           <div className="hero-demo">
@@ -165,7 +165,7 @@ export default function App() {
             <Icon name="download" /> Baixar o OptPaste
           </a>
           <p className="fine">
-            {release ? `Versão ${release.version} · ` : ''}grátis · macOS 27+
+            {release ? `Versão ${release.version} · ` : ''}grátis · macOS 14+
           </p>
         </section>
       </main>
