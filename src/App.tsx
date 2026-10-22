@@ -1,8 +1,9 @@
 import { Icon, type IconName } from './Icon'
 import { PanelDemo } from './PanelDemo'
-import { RELEASES_URL, REPO_URL, useLatestRelease } from './useLatestRelease'
+import { useLatestRelease } from './useLatestRelease'
 
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
+const DOWNLOAD_URL = '/downloads/OptPaste.dmg'
 
 const features: { icon: IconName; title: string; text: string }[] = [
   {
@@ -49,7 +50,7 @@ const shortcuts: [string[], string][] = [
 
 export default function App() {
   const release = useLatestRelease()
-  const downloadURL = release?.downloadURL ?? RELEASES_URL
+  const downloadURL = release?.url ?? DOWNLOAD_URL
 
   return (
     <>
@@ -64,9 +65,6 @@ export default function App() {
           <a href="#recursos">Recursos</a>
           <a href="#privacidade">Privacidade</a>
           <a href="#atalhos">Atalhos</a>
-          <a href={REPO_URL} target="_blank" rel="noreferrer" aria-label="GitHub">
-            <Icon name="github" />
-          </a>
         </nav>
         <a className="button small" href={downloadURL}>
           Baixar
@@ -78,7 +76,7 @@ export default function App() {
           <div className="hero-copy">
             <img className="hero-icon" src={icon} alt="Ícone do OptPaste" width={112} height={112} />
             <span className="pill">
-              {release ? `${release.prerelease ? 'Beta' : 'Versão'} ${release.version}` : 'Beta'} · grátis e open source
+              {release ? `${release.prerelease ? 'Beta' : 'Versão'} ${release.version}` : 'Beta'}
             </span>
             <h1>
               Tudo o que você copia,
@@ -93,9 +91,6 @@ export default function App() {
             <div className="cta">
               <a className="button" href={downloadURL}>
                 <Icon name="apple" /> Baixar para Mac
-              </a>
-              <a className="button ghost" href={REPO_URL} target="_blank" rel="noreferrer">
-                <Icon name="github" /> Ver no GitHub
               </a>
             </div>
             <p className="fine">Requer macOS 14 Sonoma ou mais recente</p>
@@ -135,12 +130,11 @@ export default function App() {
             <p className="section-lead">
               Tudo o que o OptPaste grava em disco é criptografado com AES-256-GCM. A chave é gerada no seu Mac e
               fica no seu Keychain. Não há conta, servidor nem telemetria. A única conexão que o app faz é para
-              conferir se existe uma versão nova no GitHub.
+              conferir se existe uma versão nova no site do OptPaste.
             </p>
             <ul className="checks">
               <li>Criptografia em repouso com chave no Keychain</li>
               <li>Senhas ocultas na lista, ou nem guardadas</li>
-              <li>Código aberto: confira você mesmo</li>
             </ul>
           </div>
         </section>
@@ -167,19 +161,13 @@ export default function App() {
             <Icon name="download" /> Baixar o OptPaste
           </a>
           <p className="fine">
-            {release ? `Versão ${release.version} · ` : ''}grátis · macOS 14+
+            {release ? `Versão ${release.version} · ` : ''}macOS 14+
           </p>
         </section>
       </main>
 
       <footer className="footer">
         <span>© {new Date().getFullYear()} Alirio Guerra</span>
-        <a href={REPO_URL} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-        <a href={`${REPO_URL}/releases`} target="_blank" rel="noreferrer">
-          Releases
-        </a>
       </footer>
     </>
   )
