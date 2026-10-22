@@ -14,12 +14,14 @@ const paths = {
   download: 'M12 3v12M7 10l5 5 5-5M4 21h16',
   apple:
     'M16.4 12.6c0-2.4 2-3.6 2.1-3.7a4.5 4.5 0 0 0-3.6-1.9c-1.5-.2-3 .9-3.7.9-.8 0-2-.9-3.2-.9a4.8 4.8 0 0 0-4 2.4c-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4a10 10 0 0 0 1.3-2.7 4.2 4.2 0 0 1-2.3-3.9ZM14 5.4A4.2 4.2 0 0 0 15 2.3a4.3 4.3 0 0 0-2.8 1.4 4 4 0 0 0-1 3 3.5 3.5 0 0 0 2.8-1.3Z',
+  windows:
+    'M5.1 2Q8.8.2 13.3 2l-1.9 7.7Q7.3 7.9 3.1 9.2ZM14.4 3.2q4.1 1.9 8.6.8l-2.2 7.4q-4.1 1.6-8.3-.5ZM2.4 11.1q4.4-1.6 8.3.3l-1.9 7.7q-4.2-2.2-8.4-.5ZM12 12.5q4.1 2 8.4.7l-2.1 7.4q-4.4 2.3-8.4-.3Z',
 } as const
 
 export type IconName = keyof typeof paths
 
 export function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
-  const filled = name === 'apple'
+  const filled = name === 'apple' || name === 'windows'
   return (
     <svg
       width={size}

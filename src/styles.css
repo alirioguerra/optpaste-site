@@ -603,6 +603,11 @@ h1 {
   gap: 56px;
 }
 
+.windows kbd svg {
+  width: 1em;
+  height: 1em;
+}
+
 .windows h2 kbd {
   font-size: 0.55em;
   vertical-align: 0.2em;
