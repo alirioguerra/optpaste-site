@@ -7,7 +7,7 @@ export async function sendLicenseEmail(license: License) {
     '',
     `Sua chave de licença: ${license.key}`,
     '',
-    'Para ativar, abra o OptPaste, vá em Ajustes > Licença, cole a chave e clique em Ativar.',
+    'Para ativar, abra o OptPaste, vá em Preferências > Licença, cole a chave e clique em Ativar.',
     'A chave funciona em até 3 Macs. Para trocar de Mac, use "Desativar neste Mac" no antigo.',
     '',
     'Guarde este e-mail. Se precisar de ajuda, é só responder.',
