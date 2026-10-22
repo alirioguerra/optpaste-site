@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
+import type { content } from './i18n'
+
+type Strings = (typeof content)['pt']['demo']
 
 type Item =
   | { id: number; kind: 'text'; text: string; app: string; time: string; pinned?: boolean }
@@ -7,20 +10,20 @@ type Item =
   | { id: number; kind: 'image'; app: string; time: string; pinned?: boolean }
   | { id: number; kind: 'file'; name: string; path: string; app: string; time: string; pinned?: boolean }
 
-const initialItems: Item[] = [
-  { id: 1, kind: 'text', text: 'Reunião remarcada para quinta às 15h, sala 3. Levar a proposta revisada.', app: '#34c759', time: 'agora' },
-  { id: 2, kind: 'password', text: 'hun••••••••', app: '#0a84ff', time: 'há 1 min' },
-  { id: 3, kind: 'image', app: '#ff9f0a', time: 'há 4 min' },
-  { id: 4, kind: 'file', name: 'Proposta-final.pdf', path: '~/Documents/Clientes', app: '#5e5ce6', time: 'há 12 min', pinned: true },
-  { id: 5, kind: 'text', text: 'https://github.com/alirioguerra/OptPaste', app: '#ff375f', time: 'há 20 min' },
-  { id: 6, kind: 'text', text: 'npm run dev -- --host', app: '#8e8e93', time: 'há 1 h' },
+const initialItems = ({ meeting, file, times }: Strings['items']): Item[] => [
+  { id: 1, kind: 'text', text: meeting, app: '#34c759', time: times.now },
+  { id: 2, kind: 'password', text: 'hun••••••••', app: '#0a84ff', time: times.minutes(1) },
+  { id: 3, kind: 'image', app: '#ff9f0a', time: times.minutes(4) },
+  { id: 4, kind: 'file', name: file.name, path: file.path, app: '#5e5ce6', time: times.minutes(12), pinned: true },
+  { id: 5, kind: 'text', text: 'https://github.com/alirioguerra/OptPaste', app: '#ff375f', time: times.minutes(20) },
+  { id: 6, kind: 'text', text: 'npm run dev -- --host', app: '#8e8e93', time: times.hours(1) },
 ]
 
 const sorted = (items: Item[]) => [...items.filter((i) => i.pinned), ...items.filter((i) => !i.pinned)]
 
 // A working replica of the history panel: ⌥V toggles it, the keyboard drives it like the app.
-export function PanelDemo() {
-  const [items, setItems] = useState(() => sorted(initialItems))
+export function PanelDemo({ t }: { t: Strings }) {
+  const [items, setItems] = useState(() => sorted(initialItems(t.items)))
   const [selected, setSelected] = useState(0)
   const [open, setOpen] = useState(true)
   const [toast, setToast] = useState<string | null>(null)
@@ -34,10 +37,10 @@ export function PanelDemo() {
   const paste = useCallback(
     (index: number) => {
       if (!items[index]) return
-      flash('Colado ✓')
+      flash(t.pasted)
       setOpen(false)
     },
-    [items, flash],
+    [items, flash, t.pasted],
   )
 
   useEffect(() => {
@@ -94,18 +97,18 @@ export function PanelDemo() {
 
   return (
     <div className="demo">
-      <div className={`panel ${open ? 'is-open' : ''}`} ref={panelRef} tabIndex={-1} aria-label="Demonstração do painel do OptPaste">
+      <div className={`panel ${open ? 'is-open' : ''}`} ref={panelRef} tabIndex={-1} aria-label={t.label}>
         <div className="panel-header">
           <span className="grabber" />
           <div className="panel-title">
-            <strong>Área de transferência</strong>
+            <strong>{t.title}</strong>
             <button
               type="button"
               className="link"
               disabled={items.length === 0}
               onClick={() => setItems((current) => current.filter((i) => i.pinned))}
             >
-              Limpar tudo
+              {t.clear}
             </button>
           </div>
         </div>
@@ -113,8 +116,8 @@ export function PanelDemo() {
         <ul className="panel-list">
           {items.length === 0 && (
             <li className="panel-empty">
-              <strong>Nada copiado ainda</strong>
-              <span>Copie algo com ⌘C e ele aparecerá aqui.</span>
+              <strong>{t.empty}</strong>
+              <span>{t.emptyHint}</span>
             </li>
           )}
           {items.map((item, index) => (
@@ -124,7 +127,7 @@ export function PanelDemo() {
               onMouseEnter={() => setSelected(index)}
               onClick={() => paste(index)}
             >
-              <RowContent item={item} />
+              <RowContent item={item} imageAlt={t.imageAlt} />
               <div className="row-meta">
                 <span className="app-dot" style={{ background: item.app }} />
                 <span>{item.time}</span>
@@ -132,7 +135,7 @@ export function PanelDemo() {
                 <span className="spacer" />
                 {index === selected ? (
                   <span className="row-actions">
-                    <button type="button" aria-label={item.pinned ? 'Desafixar' : 'Fixar'} onClick={(e) => {
+                    <button type="button" aria-label={item.pinned ? t.unpin : t.pin} onClick={(e) => {
                       e.stopPropagation()
                       const next = sorted(items.map((i) => (i.id === item.id ? { ...i, pinned: !i.pinned } : i)))
                       setItems(next)
@@ -140,7 +143,7 @@ export function PanelDemo() {
                     }}>
                       <Icon name="pin" size={13} />
                     </button>
-                    <button type="button" aria-label="Apagar" onClick={(e) => {
+                    <button type="button" aria-label={t.remove} onClick={(e) => {
                       e.stopPropagation()
                       setItems((current) => current.filter((i) => i.id !== item.id))
                     }}>
@@ -155,13 +158,12 @@ export function PanelDemo() {
           ))}
         </ul>
 
-        <div className="panel-footer">↩ colar &nbsp; ↑↓ navegar &nbsp; P fixar &nbsp; ⌫ apagar &nbsp; esc fechar</div>
+        <div className="panel-footer">{t.footer}</div>
       </div>
 
       {!open && (
         <button type="button" className="demo-reopen" onClick={() => setOpen(true)}>
-          Pressione <kbd>⌥</kbd>
-          <kbd>V</kbd> ou clique para abrir
+          {t.reopen}
         </button>
       )}
       <div className={`toast ${toast ? 'is-visible' : ''}`} role="status">
@@ -171,7 +173,7 @@ export function PanelDemo() {
   )
 }
 
-function RowContent({ item }: { item: Item }) {
+function RowContent({ item, imageAlt }: { item: Item; imageAlt: string }) {
   switch (item.kind) {
     case 'text':
       return <p className="row-text">{item.text}</p>
@@ -183,7 +185,7 @@ function RowContent({ item }: { item: Item }) {
       )
     case 'image':
       // Photo from Unsplash (images.unsplash.com/photo-1506905925346-21bda4d32df4)
-      return <img className="row-image" src="/demo/copied-image.jpg" alt="Imagem copiada" />
+      return <img className="row-image" src="/demo/copied-image.jpg" alt={imageAlt} />
     case 'file':
       return (
         <div className="row-file">
