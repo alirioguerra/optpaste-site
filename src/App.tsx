@@ -2,6 +2,8 @@ import { Icon, type IconName } from './Icon'
 import { PanelDemo } from './PanelDemo'
 import { RELEASES_URL, REPO_URL, useLatestRelease } from './useLatestRelease'
 
+const icon = `${import.meta.env.BASE_URL}icon-512.png`
+
 const features: { icon: IconName; title: string; text: string }[] = [
   {
     icon: 'keyboard',
@@ -55,7 +57,7 @@ export default function App() {
 
       <header className="nav">
         <a className="brand" href="#top">
-          <img src="/icon-512.png" alt="" width={28} height={28} />
+          <img src={icon} alt="" width={28} height={28} />
           OptPaste
         </a>
         <nav>
@@ -74,7 +76,7 @@ export default function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <img className="hero-icon" src="/icon-512.png" alt="Ícone do OptPaste" width={112} height={112} />
+            <img className="hero-icon" src={icon} alt="Ícone do OptPaste" width={112} height={112} />
             <span className="pill">
               {release ? `${release.prerelease ? 'Beta' : 'Versão'} ${release.version}` : 'Beta'} · grátis e open source
             </span>
@@ -159,7 +161,7 @@ export default function App() {
         </section>
 
         <section className="section final">
-          <img src="/icon-512.png" alt="" width={88} height={88} />
+          <img src={icon} alt="" width={88} height={88} />
           <h2>Pare de perder o que você copiou.</h2>
           <a className="button" href={downloadURL}>
             <Icon name="download" /> Baixar o OptPaste
