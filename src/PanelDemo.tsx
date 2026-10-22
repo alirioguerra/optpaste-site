@@ -82,6 +82,16 @@ export function PanelDemo() {
     if (open) panelRef.current?.focus({ preventScroll: true })
   }, [open])
 
+  // Pinning moves the row to the top, so follow it there. Scrolls only the list, never the page.
+  useEffect(() => {
+    const list = panelRef.current?.querySelector<HTMLElement>('.panel-list')
+    const row = list?.querySelectorAll<HTMLElement>('.row')[selected]
+    if (!list || !row) return
+    const top = row.getBoundingClientRect().top - list.getBoundingClientRect().top + list.scrollTop
+    if (top < list.scrollTop) list.scrollTop = top
+    else if (top + row.offsetHeight > list.scrollTop + list.clientHeight) list.scrollTop = top + row.offsetHeight - list.clientHeight
+  }, [selected, items])
+
   return (
     <div className="demo">
       <div className={`panel ${open ? 'is-open' : ''}`} ref={panelRef} tabIndex={-1} aria-label="Demonstração do painel do OptPaste">
@@ -172,7 +182,8 @@ function RowContent({ item }: { item: Item }) {
         </p>
       )
     case 'image':
-      return <div className="row-image" aria-label="Imagem copiada" />
+      // Photo from Unsplash (images.unsplash.com/photo-1506905925346-21bda4d32df4)
+      return <img className="row-image" src="/demo/copied-image.jpg" alt="Imagem copiada" />
     case 'file':
       return (
         <div className="row-file">

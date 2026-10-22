@@ -354,6 +354,7 @@ h1 {
 }
 
 .row {
+  flex-shrink: 0;
   padding: 10px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.06);
@@ -382,14 +383,11 @@ h1 {
 }
 
 .row-image {
+  display: block;
   height: 72px;
   width: 128px;
   border-radius: 6px;
-  background:
-    radial-gradient(circle at 30% 35%, #ffd27a 0 10%, transparent 11%),
-    linear-gradient(160deg, transparent 55%, #2e6b4f 56%),
-    linear-gradient(200deg, transparent 50%, #3e8a63 51%),
-    linear-gradient(#8bb8ff, #f6c7a8);
+  object-fit: cover;
 }
 
 .row-file {
