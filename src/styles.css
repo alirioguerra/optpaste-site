@@ -596,6 +596,26 @@ h1 {
   font-weight: 700;
 }
 
+.windows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.windows h2 kbd {
+  font-size: 0.55em;
+  vertical-align: 0.2em;
+}
+
+.windows img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 30px 80px -20px rgba(58, 91, 255, 0.45);
+}
+
 .shortcuts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -676,6 +696,11 @@ h1 {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .windows {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 
   .shortcuts {

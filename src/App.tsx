@@ -120,6 +120,32 @@ export default function App() {
           </div>
         </section>
 
+        <section className="section windows">
+          <div>
+            <h2>
+              O <kbd>⊞</kbd> + <kbd>V</kbd> do Windows, agora no Mac.
+            </h2>
+            <p className="section-lead">
+              No Windows, o histórico da área de transferência vem de fábrica: tecla do Windows + V e os últimos itens
+              copiados aparecem na tela. O macOS não tem nada parecido. O OptPaste traz o mesmo recurso para o Mac,
+              com <kbd>⌥</kbd>
+              <kbd>V</kbd> no lugar de <kbd>⊞</kbd> + <kbd>V</kbd>.
+            </p>
+            <ul className="checks">
+              <li>Abre por cima de qualquer app, onde você estiver</li>
+              <li>Texto, links, imagens e arquivos no mesmo histórico</li>
+              <li>Escolheu o item, ele é colado no app em que você estava</li>
+            </ul>
+          </div>
+          <img
+            src="/demo/optpaste-on-mac.jpg"
+            alt="Painel do OptPaste aberto sobre o Chrome no macOS, com texto, link e imagem copiados"
+            width={1400}
+            height={1407}
+            loading="lazy"
+          />
+        </section>
+
         <section id="recursos" className="section">
           <h2>Feito para quem copia e cola o dia todo.</h2>
           <p className="section-lead">Sem janelas para gerenciar, sem conta, sem configuração. Ele só lembra.</p>
