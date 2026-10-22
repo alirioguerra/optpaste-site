@@ -149,6 +149,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
+        <p className="footer-note">{t.footer.piracy}</p>
         <span>© {new Date().getFullYear()} Alirio Guerra</span>
       </footer>
     </>

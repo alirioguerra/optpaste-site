@@ -711,7 +711,9 @@ h1 {
 
 .footer {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 24px;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 32px 0 48px;
@@ -720,8 +722,16 @@ h1 {
   font-size: 14px;
 }
 
-.footer span {
-  margin-right: auto;
+.footer-note {
+  max-width: 620px;
+  margin: 0 auto 0 0;
+  line-height: 1.6;
+}
+
+.footer-note a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer a:hover {

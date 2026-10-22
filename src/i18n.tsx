@@ -11,6 +11,12 @@ const winKey = (
   </kbd>
 )
 
+const CONTACT_EMAIL = 'alirioguerra.92@gmail.com'
+
+const mailLink = (subject: string) => (
+  <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`}>{CONTACT_EMAIL}</a>
+)
+
 const optV = (
   <>
     <kbd>⌥</kbd>
@@ -71,6 +77,7 @@ type Content = {
   privacy: { title: string; lead: string; checks: string[] }
   shortcuts: { title: string; lead: string; items: [string[], string][] }
   final: { title: string; download: string; buy: string; fine: (version?: string) => string }
+  footer: { piracy: ReactNode }
   demo: {
     label: string
     title: string
@@ -197,6 +204,14 @@ export const content: Record<Lang, Content> = {
       download: 'Baixar o OptPaste',
       buy: 'Comprar licença',
       fine: (version) => `${version ? `Versão ${version} · ` : ''}14 dias grátis · macOS 14+`,
+    },
+    footer: {
+      piracy: (
+        <>
+          Pensando em piratear? Não precisa. Se o preço pesa agora, me escreva em {mailLink('Chave do OptPaste')} e
+          eu te mando uma chave.
+        </>
+      ),
     },
     demo: {
       label: 'Demonstração do painel do OptPaste',
@@ -326,6 +341,14 @@ export const content: Record<Lang, Content> = {
       download: 'Download OptPaste',
       buy: 'Buy a license',
       fine: (version) => `${version ? `Version ${version} · ` : ''}14-day free trial · macOS 14+`,
+    },
+    footer: {
+      piracy: (
+        <>
+          Thinking about pirating it? No need. If the price is too much right now, email me at{' '}
+          {mailLink('OptPaste key')} and I’ll send you a key.
+        </>
+      ),
     },
     demo: {
       label: 'OptPaste panel demo',
