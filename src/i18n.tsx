@@ -208,7 +208,7 @@ export const content: Record<Lang, Content> = {
     footer: {
       piracy: (
         <>
-          Pensando em piratear? Não precisa. Se o preço pesa agora, me escreva em {mailLink('Chave do OptPaste')} e
+          Sou a favor do software livre. Se não puder pagar agora, me escreva em {mailLink('Chave do OptPaste')} e
           eu te mando uma chave.
         </>
       ),
@@ -345,7 +345,7 @@ export const content: Record<Lang, Content> = {
     footer: {
       piracy: (
         <>
-          Thinking about pirating it? No need. If the price is too much right now, email me at{' '}
+          I’m all for free software. If you can’t pay right now, email me at{' '}
           {mailLink('OptPaste key')} and I’ll send you a key.
         </>
       ),
