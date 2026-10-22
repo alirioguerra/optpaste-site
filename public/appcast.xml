@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>OptPaste</title>
+    <item>
+      <title>OptPaste 1.0.0-beta.3</title>
+      <pubDate>Thu, 22 Oct 2026 15:25:32 +0000</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul>
+<li>feat: install updates automatically with Sparkle</li>
+</ul>]]></description>
+      <enclosure url="https://optpaste-site.vercel.app/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="fA1pCXWXPmKPfQB0t7DThqnnnPjHXEJxfb89xjKD1WIQBn8qVFj/iHuUnw6wGtM+Pi+w78EAt3+qBY/MyjeZDA==" length="3400098" />
+    </item>
+  </channel>
+</rss>
