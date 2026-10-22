@@ -645,6 +645,11 @@ h1 {
   margin: 0;
 }
 
+.final .cta {
+  justify-content: center;
+  margin-top: 0;
+}
+
 .footer {
   display: flex;
   gap: 24px;

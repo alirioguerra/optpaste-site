@@ -4,6 +4,7 @@ import { useLatestRelease } from './useLatestRelease'
 
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
 const DOWNLOAD_URL = '/downloads/OptPaste.dmg'
+const CHECKOUT_URL = 'https://optpaste.lemonsqueezy.com/buy'
 
 const features: { icon: IconName; title: string; text: string }[] = [
   {
@@ -76,7 +77,7 @@ export default function App() {
           <div className="hero-copy">
             <img className="hero-icon" src={icon} alt="Ícone do OptPaste" width={112} height={112} />
             <span className="pill">
-              {release ? `${release.prerelease ? 'Beta' : 'Versão'} ${release.version}` : 'Beta'}
+              {release ? `${release.prerelease ? 'Beta' : 'Versão'} ${release.version}` : 'Beta'} · 14 dias grátis
             </span>
             <h1>
               Tudo o que você copia,
@@ -92,8 +93,11 @@ export default function App() {
               <a className="button" href={downloadURL}>
                 <Icon name="apple" /> Baixar para Mac
               </a>
+              <a className="button ghost" href={CHECKOUT_URL}>
+                <Icon name="key" /> Comprar licença
+              </a>
             </div>
-            <p className="fine">Requer macOS 14 Sonoma ou mais recente</p>
+            <p className="fine">Teste grátis por 14 dias · requer macOS 14 Sonoma ou mais recente</p>
           </div>
 
           <div className="hero-demo">
@@ -129,8 +133,8 @@ export default function App() {
             <h2>Seu histórico não sai do seu Mac.</h2>
             <p className="section-lead">
               Tudo o que o OptPaste grava em disco é criptografado com AES-256-GCM. A chave é gerada no seu Mac e
-              fica no seu Keychain. Não há conta, servidor nem telemetria. A única conexão que o app faz é para
-              conferir se existe uma versão nova no site do OptPaste.
+              fica no seu Keychain. Não há conta, servidor nem telemetria. O app só se conecta à internet para
+              conferir se existe uma versão nova e para validar sua licença.
             </p>
             <ul className="checks">
               <li>Criptografia em repouso com chave no Keychain</li>
@@ -157,11 +161,16 @@ export default function App() {
         <section className="section final">
           <img src={icon} alt="" width={88} height={88} />
           <h2>Pare de perder o que você copiou.</h2>
-          <a className="button" href={downloadURL}>
-            <Icon name="download" /> Baixar o OptPaste
-          </a>
+          <div className="cta">
+            <a className="button" href={downloadURL}>
+              <Icon name="download" /> Baixar o OptPaste
+            </a>
+            <a className="button ghost" href={CHECKOUT_URL}>
+              <Icon name="key" /> Comprar licença
+            </a>
+          </div>
           <p className="fine">
-            {release ? `Versão ${release.version} · ` : ''}macOS 14+
+            {release ? `Versão ${release.version} · ` : ''}14 dias grátis · macOS 14+
           </p>
         </section>
       </main>
