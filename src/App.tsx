@@ -92,8 +92,7 @@ export default function App() {
             </span>
             <h1>
               Tudo o que você copia,
-              <br />
-              <span className="gradient-text">a um atalho de distância.</span>
+              <span className="gradient-text"> a um atalho de distância.</span>
             </h1>
             <p className="lead">
               O OptPaste guarda o histórico da área de transferência do seu Mac. Copiou algo há dez minutos e já
