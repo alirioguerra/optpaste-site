@@ -184,7 +184,12 @@ export const content: Record<Lang, Content> = {
     privacy: {
       title: 'Seu histórico não sai do seu Mac.',
       lead: 'Tudo o que o OptPaste grava em disco é criptografado com AES-256-GCM. A chave é gerada no seu Mac e fica no seu Keychain. Não há conta, servidor nem telemetria. O app só se conecta à internet para conferir se existe uma versão nova e para validar sua licença.',
-      checks: ['Criptografia em repouso com chave no Keychain', 'Senhas ocultas na lista, ou nem guardadas'],
+      checks: [
+        'Tudo fica salvo localmente, só no seu Mac',
+        'Nada do que você copia é enviado para servidores',
+        'Criptografia em repouso com chave no Keychain',
+        'Senhas ocultas na lista, ou nem guardadas',
+      ],
     },
     shortcuts: {
       title: 'Mãos no teclado.',
@@ -321,7 +326,12 @@ export const content: Record<Lang, Content> = {
     privacy: {
       title: 'Your history never leaves your Mac.',
       lead: 'Everything OptPaste writes to disk is encrypted with AES-256-GCM. The key is generated on your Mac and stays in your Keychain. No account, no server, no telemetry. The app only goes online to check for a new version and to validate your license.',
-      checks: ['Encryption at rest with the key in your Keychain', 'Passwords hidden in the list, or not stored at all'],
+      checks: [
+        'Everything is stored locally, only on your Mac',
+        'Nothing you copy is ever sent to a server',
+        'Encryption at rest with the key in your Keychain',
+        'Passwords hidden in the list, or not stored at all',
+      ],
     },
     shortcuts: {
       title: 'Hands on the keyboard.',
