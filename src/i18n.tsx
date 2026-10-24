@@ -120,7 +120,7 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Baixar para Mac',
-      buy: 'Comprar licença',
+      buy: 'Comprar licença · US$ 1,99',
       fine: 'Teste grátis por 14 dias · requer macOS 14 Sonoma ou mais recente',
       hint: (
         <>
@@ -202,7 +202,7 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Pare de perder o que você copiou.',
       download: 'Baixar o OptPaste',
-      buy: 'Comprar licença',
+      buy: 'Comprar licença · US$ 1,99',
       fine: (version) => `${version ? `Versão ${version} · ` : ''}14 dias grátis · macOS 14+`,
     },
     footer: {
@@ -257,7 +257,7 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Download for Mac',
-      buy: 'Buy a license',
+      buy: 'Buy a license · $1.99',
       fine: 'Free for 14 days · requires macOS 14 Sonoma or later',
       hint: (
         <>
@@ -339,7 +339,7 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Stop losing what you copied.',
       download: 'Download OptPaste',
-      buy: 'Buy a license',
+      buy: 'Buy a license · $1.99',
       fine: (version) => `${version ? `Version ${version} · ` : ''}14-day free trial · macOS 14+`,
     },
     footer: {
