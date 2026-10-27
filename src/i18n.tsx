@@ -11,11 +11,9 @@ const winKey = (
   </kbd>
 )
 
-const CONTACT_EMAIL = 'alirioguerra.92@gmail.com'
+export const COFFEE_URL = 'https://buymeacoffee.com/alirioguerra'
 
-const mailLink = (subject: string) => (
-  <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`}>{CONTACT_EMAIL}</a>
-)
+const coffeeLink = <a href={COFFEE_URL}>buymeacoffee.com/alirioguerra</a>
 
 const optV = (
   <>
@@ -63,12 +61,12 @@ type Content = {
   hero: {
     iconAlt: string
     version: (prerelease: boolean, version?: string) => string
-    trial: string
+    free: string
     title: string
     titleAccent: string
     lead: ReactNode
     download: string
-    buy: string
+    coffee: string
     fine: string
     hint: ReactNode
   }
@@ -76,8 +74,8 @@ type Content = {
   features: { title: string; lead: string; items: { icon: IconName; title: string; text: string }[] }
   privacy: { title: string; lead: string; checks: string[] }
   shortcuts: { title: string; lead: string; items: [string[], string][] }
-  final: { title: string; download: string; buy: string; fine: (version?: string) => string }
-  footer: { piracy: ReactNode }
+  final: { title: string; download: string; coffee: string; fine: (version?: string) => string }
+  footer: { coffee: ReactNode }
   demo: {
     label: string
     title: string
@@ -110,7 +108,7 @@ export const content: Record<Lang, Content> = {
     hero: {
       iconAlt: 'Ícone do OptPaste',
       version: (prerelease, version) => (version ? `${prerelease ? 'Beta' : 'Versão'} ${version}` : 'Beta'),
-      trial: '14 dias grátis',
+      free: 'Grátis para sempre',
       title: 'Tudo o que você copia,',
       titleAccent: ' a um atalho de distância.',
       lead: (
@@ -120,8 +118,8 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Baixar para Mac',
-      buy: 'Comprar licença · US$ 1,99',
-      fine: 'Teste grátis por 14 dias · requer macOS 14 Sonoma ou mais recente',
+      coffee: 'Me pague um café',
+      fine: 'Grátis, sem anúncios e sem conta · requer macOS 14 Sonoma ou mais recente',
       hint: (
         <>
           Experimente aqui: <kbd>↑</kbd>
@@ -183,7 +181,7 @@ export const content: Record<Lang, Content> = {
     },
     privacy: {
       title: 'Seu histórico não sai do seu Mac.',
-      lead: 'Tudo o que o OptPaste grava em disco é criptografado com AES-256-GCM. A chave é gerada no seu Mac e fica no seu Keychain. Não há conta, servidor nem telemetria. O app só se conecta à internet para conferir se existe uma versão nova e para validar sua licença.',
+      lead: 'Tudo o que o OptPaste grava em disco é criptografado com AES-256-GCM. A chave é gerada no seu Mac e fica no seu Keychain. Não há conta, servidor nem telemetria. O app só se conecta à internet para conferir se existe uma versão nova.',
       checks: [
         'Tudo fica salvo localmente, só no seu Mac',
         'Nada do que você copia é enviado para servidores',
@@ -207,14 +205,14 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Pare de perder o que você copiou.',
       download: 'Baixar o OptPaste',
-      buy: 'Comprar licença · US$ 1,99',
-      fine: (version) => `${version ? `Versão ${version} · ` : ''}14 dias grátis · macOS 14+`,
+      coffee: 'Me pague um café',
+      fine: (version) => `${version ? `Versão ${version} · ` : ''}Grátis para sempre · macOS 14+`,
     },
     footer: {
-      piracy: (
+      coffee: (
         <>
-          Acredito que software deve ser acessível a todos. Se não puder pagar agora, me escreva em {mailLink('Chave do OptPaste')} e
-          eu te mando uma chave.
+          O OptPaste é e sempre será gratuito. Se ele te ajuda e você quiser apoiar o projeto, me pague um café em{' '}
+          {coffeeLink}.
         </>
       ),
     },
@@ -252,7 +250,7 @@ export const content: Record<Lang, Content> = {
     hero: {
       iconAlt: 'OptPaste icon',
       version: (prerelease, version) => (version ? `${prerelease ? 'Beta' : 'Version'} ${version}` : 'Beta'),
-      trial: '14-day free trial',
+      free: 'Free forever',
       title: 'Everything you copy,',
       titleAccent: ' one shortcut away.',
       lead: (
@@ -262,8 +260,8 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Download for Mac',
-      buy: 'Buy a license · $1.99',
-      fine: 'Free for 14 days · requires macOS 14 Sonoma or later',
+      coffee: 'Buy me a coffee',
+      fine: 'Free, no ads, no account · requires macOS 14 Sonoma or later',
       hint: (
         <>
           Try it here: <kbd>↑</kbd>
@@ -325,7 +323,7 @@ export const content: Record<Lang, Content> = {
     },
     privacy: {
       title: 'Your history never leaves your Mac.',
-      lead: 'Everything OptPaste writes to disk is encrypted with AES-256-GCM. The key is generated on your Mac and stays in your Keychain. No account, no server, no telemetry. The app only goes online to check for a new version and to validate your license.',
+      lead: 'Everything OptPaste writes to disk is encrypted with AES-256-GCM. The key is generated on your Mac and stays in your Keychain. No account, no server, no telemetry. The app only goes online to check for a new version.',
       checks: [
         'Everything is stored locally, only on your Mac',
         'Nothing you copy is ever sent to a server',
@@ -349,14 +347,14 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Stop losing what you copied.',
       download: 'Download OptPaste',
-      buy: 'Buy a license · $1.99',
-      fine: (version) => `${version ? `Version ${version} · ` : ''}14-day free trial · macOS 14+`,
+      coffee: 'Buy me a coffee',
+      fine: (version) => `${version ? `Version ${version} · ` : ''}Free forever · macOS 14+`,
     },
     footer: {
-      piracy: (
+      coffee: (
         <>
-          I believe software should be accessible to everyone. If you can’t pay right now, email me at{' '}
-          {mailLink('OptPaste key')} and I’ll send you a key.
+          OptPaste is and always will be free. If it helps you and you’d like to support it, buy me a coffee at{' '}
+          {coffeeLink}.
         </>
       ),
     },

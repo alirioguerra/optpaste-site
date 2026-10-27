@@ -1,6 +1,6 @@
 # optpaste-site
 
-Site do OptPaste (React + Vite) e API de licenças (`api/`, funções da Vercel). Publicado na Vercel a cada push na `main`.
+Site do OptPaste (React + Vite). Publicado na Vercel a cada push na `main`.
 
 ## Commits
 

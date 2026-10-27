@@ -1,9 +1,7 @@
-import { useEffect } from 'react'
 import { Icon } from './Icon'
 import { LangToggle } from './LangToggle'
 import { PanelDemo } from './PanelDemo'
-import { content, useLang } from './i18n'
-import { CHECKOUT_HASH, openCheckout } from './paddle'
+import { COFFEE_URL, content, useLang } from './i18n'
 import { useLatestRelease } from './useLatestRelease'
 
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
@@ -14,16 +12,6 @@ export default function App() {
   const downloadURL = release?.url ?? DOWNLOAD_URL
   const [lang, setLang] = useLang()
   const t = content[lang]
-
-  // The app's "Comprar licença…" links here.
-  useEffect(() => {
-    if (window.location.hash === CHECKOUT_HASH) openCheckout()
-  }, [])
-
-  const buy = (event: React.MouseEvent) => {
-    event.preventDefault()
-    openCheckout()
-  }
 
   return (
     <>
@@ -50,7 +38,7 @@ export default function App() {
           <div className="hero-copy">
             <img className="hero-icon" src={icon} alt={t.hero.iconAlt} width={112} height={112} />
             <span className="pill">
-              {t.hero.version(release?.prerelease ?? true, release?.version)} · {t.hero.trial}
+              {t.hero.version(release?.prerelease ?? true, release?.version)} · {t.hero.free}
             </span>
             <h1>
               {t.hero.title}
@@ -61,8 +49,8 @@ export default function App() {
               <a className="button" href={downloadURL}>
                 <Icon name="apple" /> {t.hero.download}
               </a>
-              <a className="button ghost" href={CHECKOUT_HASH} onClick={buy}>
-                <Icon name="key" /> {t.hero.buy}
+              <a className="button ghost" href={COFFEE_URL}>
+                <Icon name="coffee" /> {t.hero.coffee}
               </a>
             </div>
             <p className="fine">{t.hero.fine}</p>
@@ -140,8 +128,8 @@ export default function App() {
             <a className="button" href={downloadURL}>
               <Icon name="download" /> {t.final.download}
             </a>
-            <a className="button ghost" href={CHECKOUT_HASH} onClick={buy}>
-              <Icon name="key" /> {t.final.buy}
+            <a className="button ghost" href={COFFEE_URL}>
+              <Icon name="coffee" /> {t.final.coffee}
             </a>
           </div>
           <p className="fine">{t.final.fine(release?.version)}</p>
@@ -149,7 +137,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        <p className="footer-note">{t.footer.piracy}</p>
+        <p className="footer-note">{t.footer.coffee}</p>
         <span>© {new Date().getFullYear()} Alirio Guerra</span>
       </footer>
     </>
