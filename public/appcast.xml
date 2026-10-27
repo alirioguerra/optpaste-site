@@ -3,16 +3,15 @@
   <channel>
     <title>OptPaste</title>
     <item>
-      <title>OptPaste 1.0.0-beta.5</title>
-      <pubDate>Thu, 22 Oct 2026 15:43:56 +0000</pubDate>
-      <sparkle:version>5</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.5</sparkle:shortVersionString>
+      <title>OptPaste 1.0.0</title>
+      <pubDate>Tue, 27 Oct 2026 23:54:02 +0000</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[<ul>
-<li>feat: translate the app into English and Portuguese</li>
-<li>feat: split Preferences into toolbar tabs</li>
+<li>feat: make OptPaste free forever, with a Buy Me a Coffee link on launch</li>
 </ul>]]></description>
-      <enclosure url="https://optpaste-site.vercel.app/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="Awn8zpje9OP0ERp3iYvpjvS/G+l/WV6tRyFg8xWLC0cmZtMEPgmU+viZ9vKs0vH3k0HMQQ6sQkcb1wnuuVaXDw==" length="3423793" />
+      <enclosure url="https://optpaste-site.vercel.app/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="SOA1+CjnXqrVZLnSnFxdVYNIw2iBgxqbMjg5n728yoGaj4b5XZusoAHXrcyzQTqIuBSLl2IjTsFWznIUgUmwAg==" length="3392034" />
     </item>
   </channel>
 </rss>
