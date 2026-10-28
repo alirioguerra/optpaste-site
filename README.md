@@ -8,7 +8,8 @@ npm run dev      # desenvolvimento
 npm run build    # gera dist/ para publicar
 ```
 
-Publicado na Vercel (preset Vite: `npm run build`, saída em `dist/`).
+Publicado no Cloudflare Pages com `npm run deploy` (projeto `optpaste`, https://optpaste.pages.dev). Os headers de cache
+ficam em `public/_headers`.
 
 Releases são publicadas pelo `scripts/release.sh` do repositório do app: ele atualiza o `.dmg`, o
 `public/appcast.xml` (feed do Sparkle, usado pelo app para se atualizar sozinho) e o `public/latest.json`

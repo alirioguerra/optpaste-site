@@ -1,0 +1,5 @@
+/latest.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/appcast.xml
+  Cache-Control: public, max-age=0, must-revalidate
