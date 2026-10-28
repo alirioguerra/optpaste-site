@@ -6,7 +6,7 @@ export type LatestRelease = {
   url: string
 }
 
-// Same file the app reads to look for updates; edit public/latest.json on each release.
+// Written by the app repo's scripts/release.sh on each release.
 export function useLatestRelease() {
   const [release, setRelease] = useState<LatestRelease | null>(null)
 
