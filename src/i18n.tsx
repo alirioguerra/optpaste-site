@@ -11,7 +11,7 @@ const winKey = (
   </kbd>
 )
 
-export const COFFEE_URL = 'https://buymeacoffee.com/alirioguerra'
+export const COFFEE_URL = 'https://www.buymeacoffee.com/alirioguerra'
 export const REPO_URL = 'https://github.com/alirioguerra/OptPaste'
 export const PROFILE_URL = 'https://alirioguerra.github.io'
 
@@ -68,7 +68,6 @@ type Content = {
     titleAccent: string
     lead: ReactNode
     download: string
-    coffee: string
     fine: string
     hint: ReactNode
   }
@@ -76,7 +75,7 @@ type Content = {
   features: { title: string; lead: string; items: { icon: IconName; title: string; text: string }[] }
   privacy: { title: string; lead: string; checks: string[]; source: string; sourceButton: string }
   shortcuts: { title: string; lead: string; items: [string[], string][] }
-  final: { title: string; download: string; coffee: string; fine: (version?: string) => string }
+  final: { title: string; download: string; fine: (version?: string) => string }
   footer: { coffee: ReactNode }
   demo: {
     label: string
@@ -120,7 +119,6 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Baixar para Mac',
-      coffee: 'Me pague um café',
       fine: 'Grátis, sem anúncios e sem conta · requer macOS 14 Sonoma ou mais recente',
       hint: (
         <>
@@ -209,7 +207,6 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Pare de perder o que você copiou.',
       download: 'Baixar o OptPaste',
-      coffee: 'Me pague um café',
       fine: (version) => `${version ? `Versão ${version} · ` : ''}Grátis para sempre · macOS 14+`,
     },
     footer: {
@@ -264,7 +261,6 @@ export const content: Record<Lang, Content> = {
         </>
       ),
       download: 'Download for Mac',
-      coffee: 'Buy me a coffee',
       fine: 'Free, no ads, no account · requires macOS 14 Sonoma or later',
       hint: (
         <>
@@ -353,7 +349,6 @@ export const content: Record<Lang, Content> = {
     final: {
       title: 'Stop losing what you copied.',
       download: 'Download OptPaste',
-      coffee: 'Buy me a coffee',
       fine: (version) => `${version ? `Version ${version} · ` : ''}Free forever · macOS 14+`,
     },
     footer: {

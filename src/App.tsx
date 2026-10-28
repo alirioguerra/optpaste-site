@@ -7,6 +7,18 @@ import { useLatestRelease } from './useLatestRelease'
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
 const DOWNLOAD_URL = '/downloads/OptPaste.dmg'
 
+function CoffeeButton() {
+  return (
+    <a href={COFFEE_URL} target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+        alt="Buy Me a Coffee"
+        style={{ height: 60, width: 217 }}
+      />
+    </a>
+  )
+}
+
 export default function App() {
   const release = useLatestRelease()
   const downloadURL = release?.url ?? DOWNLOAD_URL
@@ -49,9 +61,7 @@ export default function App() {
               <a className="button" href={downloadURL}>
                 <Icon name="apple" /> {t.hero.download}
               </a>
-              <a className="button ghost" href={COFFEE_URL}>
-                <Icon name="coffee" /> {t.hero.coffee}
-              </a>
+              <CoffeeButton />
             </div>
             <p className="fine">{t.hero.fine}</p>
           </div>
@@ -132,9 +142,7 @@ export default function App() {
             <a className="button" href={downloadURL}>
               <Icon name="download" /> {t.final.download}
             </a>
-            <a className="button ghost" href={COFFEE_URL}>
-              <Icon name="coffee" /> {t.final.coffee}
-            </a>
+            <CoffeeButton />
           </div>
           <p className="fine">{t.final.fine(release?.version)}</p>
         </section>
