@@ -625,6 +625,12 @@ h1 {
   list-style: none;
 }
 
+.privacy-source {
+  margin: 28px 0 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .checks li::before {
   content: '✓';
   margin-right: 10px;
@@ -728,7 +734,8 @@ h1 {
   line-height: 1.6;
 }
 
-.footer-note a {
+.footer-note a,
+.footer span a {
   color: var(--text);
   text-decoration: underline;
   text-underline-offset: 3px;

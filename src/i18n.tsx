@@ -12,6 +12,8 @@ const winKey = (
 )
 
 export const COFFEE_URL = 'https://buymeacoffee.com/alirioguerra'
+export const REPO_URL = 'https://github.com/alirioguerra/OptPaste'
+export const PROFILE_URL = 'https://alirioguerra.github.io'
 
 const coffeeLink = <a href={COFFEE_URL}>buymeacoffee.com/alirioguerra</a>
 
@@ -72,7 +74,7 @@ type Content = {
   }
   windows: { title: ReactNode; lead: ReactNode; checks: string[]; imageAlt: string }
   features: { title: string; lead: string; items: { icon: IconName; title: string; text: string }[] }
-  privacy: { title: string; lead: string; checks: string[] }
+  privacy: { title: string; lead: string; checks: string[]; source: string; sourceButton: string }
   shortcuts: { title: string; lead: string; items: [string[], string][] }
   final: { title: string; download: string; coffee: string; fine: (version?: string) => string }
   footer: { coffee: ReactNode }
@@ -188,6 +190,8 @@ export const content: Record<Lang, Content> = {
         'Criptografia em repouso com chave no Keychain',
         'Senhas ocultas na lista, ou nem guardadas',
       ],
+      source: 'O código do OptPaste é aberto. Não precisa acreditar só na minha palavra: veja você mesmo o que o app faz.',
+      sourceButton: 'Ver o código no GitHub',
     },
     shortcuts: {
       title: 'Mãos no teclado.',
@@ -330,6 +334,8 @@ export const content: Record<Lang, Content> = {
         'Encryption at rest with the key in your Keychain',
         'Passwords hidden in the list, or not stored at all',
       ],
+      source: 'OptPaste is open source. You don’t have to take my word for it: see for yourself what the app does.',
+      sourceButton: 'View the code on GitHub',
     },
     shortcuts: {
       title: 'Hands on the keyboard.',

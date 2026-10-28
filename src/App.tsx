@@ -1,7 +1,7 @@
 import { Icon } from './Icon'
 import { LangToggle } from './LangToggle'
 import { PanelDemo } from './PanelDemo'
-import { COFFEE_URL, content, useLang } from './i18n'
+import { COFFEE_URL, PROFILE_URL, REPO_URL, content, useLang } from './i18n'
 import { useLatestRelease } from './useLatestRelease'
 
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
@@ -103,6 +103,10 @@ export default function App() {
                 <li key={check}>{check}</li>
               ))}
             </ul>
+            <p className="privacy-source">{t.privacy.source}</p>
+            <a className="button ghost" href={REPO_URL}>
+              <Icon name="github" /> {t.privacy.sourceButton}
+            </a>
           </div>
         </section>
 
@@ -138,7 +142,9 @@ export default function App() {
 
       <footer className="footer">
         <p className="footer-note">{t.footer.coffee}</p>
-        <span>© {new Date().getFullYear()} Alirio Guerra</span>
+        <span>
+          © {new Date().getFullYear()} <a href={PROFILE_URL}>Alirio Guerra</a>
+        </span>
       </footer>
     </>
   )
