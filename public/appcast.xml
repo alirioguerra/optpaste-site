@@ -4,14 +4,14 @@
     <title>OptPaste</title>
     <item>
       <title>OptPaste 1.0.0</title>
-      <pubDate>Tue, 27 Oct 2026 23:54:02 +0000</pubDate>
-      <sparkle:version>6</sparkle:version>
+      <pubDate>Wed, 28 Oct 2026 00:02:05 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
       <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[<ul>
 <li>feat: make OptPaste free forever, with a Buy Me a Coffee link on launch</li>
 </ul>]]></description>
-      <enclosure url="https://optpaste-site.vercel.app/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="SOA1+CjnXqrVZLnSnFxdVYNIw2iBgxqbMjg5n728yoGaj4b5XZusoAHXrcyzQTqIuBSLl2IjTsFWznIUgUmwAg==" length="3392034" />
+      <enclosure url="https://optpaste.pages.dev/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="FQ62Zwb1QwA2Tnu4lB9vPeEdqS3jFAQw4wnDt5op5UASCMIcZrk57dUq4m1E6zB9sdb9mJbu6xUrmolhT0ZqBA==" length="3392018" />
     </item>
   </channel>
 </rss>
