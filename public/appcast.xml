@@ -3,15 +3,15 @@
   <channel>
     <title>OptPaste</title>
     <item>
-      <title>OptPaste 1.1.0</title>
-      <pubDate>Wed, 28 Oct 2026 00:12:30 +0000</pubDate>
-      <sparkle:version>8</sparkle:version>
-      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <title>OptPaste 1.1.1</title>
+      <pubDate>Sun, 01 Nov 2026 19:30:52 +0000</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[<ul>
-<li>feat: link the open source code on GitHub</li>
+<li>feat: simplify the support prompt and label the button Support</li>
 </ul>]]></description>
-      <enclosure url="https://optpaste.pages.dev/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="3sfavgsOX/labfyHzwwdp1OUS+JE/gtv3jy6XX2VYNiFMwhwtNI3WJp88QeyqXVZbDpX2oer5FbVSeW0JW9WBQ==" length="3392395" />
+      <enclosure url="https://optpaste.pages.dev/downloads/OptPaste.dmg" type="application/octet-stream" sparkle:edSignature="nn2RatgkZerwKE680YCj+mm2RhbPHWxl0fD4pVZU8W6rIRSzzqlrv0CDQ+eSg9IOofbqtUUSWuFkMmFmDiTLDA==" length="3393275" />
     </item>
   </channel>
 </rss>
