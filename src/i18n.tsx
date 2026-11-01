@@ -15,7 +15,6 @@ export const COFFEE_URL = 'https://www.buymeacoffee.com/alirioguerra'
 export const REPO_URL = 'https://github.com/alirioguerra/OptPaste'
 export const PROFILE_URL = 'https://alirioguerra.github.io'
 
-const coffeeLink = <a href={COFFEE_URL}>buymeacoffee.com/alirioguerra</a>
 
 const optV = (
   <>
@@ -76,7 +75,6 @@ type Content = {
   privacy: { title: string; lead: string; checks: string[]; source: string; sourceButton: string }
   shortcuts: { title: string; lead: string; items: [string[], string][] }
   final: { title: string; download: string; fine: (version?: string) => string }
-  footer: { coffee: ReactNode }
   demo: {
     label: string
     title: string
@@ -208,14 +206,6 @@ export const content: Record<Lang, Content> = {
       title: 'Pare de perder o que você copiou.',
       download: 'Baixar o OptPaste',
       fine: (version) => `${version ? `Versão ${version} · ` : ''}Grátis para sempre · macOS 14+`,
-    },
-    footer: {
-      coffee: (
-        <>
-          O OptPaste é e sempre será gratuito. Se ele te ajuda e você quiser apoiar o projeto, me pague um café em{' '}
-          {coffeeLink}.
-        </>
-      ),
     },
     demo: {
       label: 'Demonstração do painel do OptPaste',
@@ -350,14 +340,6 @@ export const content: Record<Lang, Content> = {
       title: 'Stop losing what you copied.',
       download: 'Download OptPaste',
       fine: (version) => `${version ? `Version ${version} · ` : ''}Free forever · macOS 14+`,
-    },
-    footer: {
-      coffee: (
-        <>
-          OptPaste is and always will be free. If it helps you and you’d like to support it, buy me a coffee at{' '}
-          {coffeeLink}.
-        </>
-      ),
     },
     demo: {
       label: 'OptPaste panel demo',

@@ -149,7 +149,6 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        <p className="footer-note">{t.footer.coffee}</p>
         <span>
           © {new Date().getFullYear()} <a href={PROFILE_URL}>Alirio Guerra</a>
         </span>
