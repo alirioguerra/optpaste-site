@@ -6,7 +6,7 @@ export type Lang = 'pt' | 'en'
 const STORAGE_KEY = 'optpaste.lang'
 
 const winKey = (
-  <kbd aria-label="Windows">
+  <kbd role="img" aria-label="Windows">
     <Icon name="windows" />
   </kbd>
 )
