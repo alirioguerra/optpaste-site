@@ -48,7 +48,7 @@ export default function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <img className="hero-icon" src={icon} alt={t.hero.iconAlt} width={112} height={112} />
+            <img className="hero-icon" src={icon} alt={t.hero.iconAlt} width={112} height={112} fetchPriority="high" />
             <span className="pill">
               {t.hero.version(release?.prerelease ?? true, release?.version)} · {t.hero.free}
             </span>
