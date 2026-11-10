@@ -1,0 +1,13 @@
+{
+  "name": "OptPaste",
+  "short_name": "OptPaste",
+  "description": "Clipboard history for Mac. Everything you copy, one shortcut away (⌥V).",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#07070d",
+  "theme_color": "#07070d",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

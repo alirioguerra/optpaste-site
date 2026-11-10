@@ -40,8 +40,17 @@ export function useLang() {
 
   useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en'
-    document.title = content[lang].meta.title
-    document.querySelector('meta[name="description"]')?.setAttribute('content', content[lang].meta.description)
+    const { title, description } = content[lang].meta
+    document.title = title
+    const setMeta = (selector: string, value: string) =>
+      document.querySelector(`meta[${selector}]`)?.setAttribute('content', value)
+    setMeta('name="description"', description)
+    setMeta('property="og:title"', title)
+    setMeta('property="og:description"', description)
+    setMeta('name="twitter:title"', title)
+    setMeta('name="twitter:description"', description)
+    setMeta('property="og:locale"', lang === 'pt' ? 'pt_BR' : 'en_US')
+    setMeta('property="og:locale:alternate"', lang === 'pt' ? 'en_US' : 'pt_BR')
   }, [lang])
 
   const choose = (next: Lang) => {
