@@ -13,3 +13,5 @@ Site do OptPaste (React + Vite), publicado no Cloudflare Pages (projeto `optpast
 ## Textos
 
 - O site tem português e inglês. Todo texto visível fica em `src/i18n.tsx`, nas duas línguas.
+- O HTML estático (`index.html` e o prerender do build) sai em inglês, para SEO global e para os diretórios que importam
+  título e descrição. No navegador, `useLang` troca título, meta tags e conteúdo para o idioma do visitante.
