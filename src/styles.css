@@ -738,6 +738,20 @@ h1 {
   color: var(--text);
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.badges img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
 /* Responsive */
 @media (max-width: 920px) {
   .hero {

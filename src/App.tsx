@@ -7,6 +7,17 @@ import { useLatestRelease } from './useLatestRelease'
 const icon = `${import.meta.env.BASE_URL}icon-512.png`
 const DOWNLOAD_URL = '/downloads/OptPaste.dmg'
 
+// Selos dos diretórios onde o OptPaste está listado. Vários só aprovam (ou só dão link dofollow)
+// com o selo no site; o domínio de cada imagem precisa estar no img-src de public/_headers.
+const DIRECTORY_BADGES = [
+  {
+    name: 'MacTools Pro',
+    href: 'https://www.mactools.pro',
+    img: 'https://www.mactools.pro/mactools-badge-dark.svg',
+    alt: 'Listed on MacTools Pro',
+  },
+]
+
 function CoffeeButton() {
   return (
     <a href={COFFEE_URL} target="_blank" rel="noopener noreferrer">
@@ -152,6 +163,13 @@ export default function App() {
         <span>
           © {new Date().getFullYear()} <a href={PROFILE_URL}>Alirio Guerra</a>
         </span>
+        <div className="badges">
+          {DIRECTORY_BADGES.map((b) => (
+            <a key={b.name} href={b.href} target="_blank" rel="noopener">
+              <img src={b.img} alt={b.alt} height={40} loading="lazy" />
+            </a>
+          ))}
+        </div>
       </footer>
     </>
   )
