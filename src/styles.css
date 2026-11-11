@@ -743,7 +743,9 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-left: auto;
+  width: min(1120px, calc(100% - 32px));
+  margin: -24px auto 0;
+  padding-bottom: 48px;
 }
 
 .badges img {
