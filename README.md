@@ -8,7 +8,7 @@ npm run dev      # desenvolvimento
 npm run build    # gera dist/ para publicar
 ```
 
-Publicado no Cloudflare Pages com `npm run deploy` (projeto `optpaste`, https://optpaste.pages.dev). Os headers de cache
+Publicado no Cloudflare Pages com `npm run deploy` (projeto `optpaste`, https://optpaste.acervoapps.com.br, também em https://optpaste.pages.dev). Os headers de cache
 ficam em `public/_headers`.
 
 Releases são publicadas pelo `scripts/release.sh` do repositório do app: ele atualiza o `.dmg`, o

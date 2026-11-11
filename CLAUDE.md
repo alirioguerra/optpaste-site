@@ -1,6 +1,6 @@
 # optpaste-site
 
-Site do OptPaste (React + Vite), publicado no Cloudflare Pages (projeto `optpaste`, https://optpaste.pages.dev).
+Site do OptPaste (React + Vite), publicado no Cloudflare Pages (projeto `optpaste`, https://optpaste.acervoapps.com.br, também em https://optpaste.pages.dev).
 
 ## Commits
 
