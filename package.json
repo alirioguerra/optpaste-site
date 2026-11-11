@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "deploy": "npm run build && npx -y wrangler@4 pages deploy dist --project-name optpaste --branch main",
     "preview": "vite preview"
   },

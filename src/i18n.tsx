@@ -25,6 +25,8 @@ const optV = (
 
 /** Portuguese for Portuguese-speaking devices, English for everyone else, unless the visitor picked one. */
 function initialLang(): Lang {
+  // No prerender do build não há navegador: o HTML estático sai em inglês.
+  if (typeof window === 'undefined') return 'en'
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved === 'pt' || saved === 'en') return saved
